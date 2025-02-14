@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #ff6f61;
+    --secondary-color: #2a2a40;
+    --text-color: #e0e0e0;
+    --background-color: #1e1e2f;
+    --border-color: #3d3d5c;
+    --font-family: 'Arial', sans-serif;
+}
+
+body {
+    position: relative;
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh; /* Garantit que le body couvre au moins la hauteur de la fenêtre */
+}
+
+/* Image de fond à gauche (manette) */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur de la moitié gauche */
+    height: 100%; /* S'étend sur toute la hauteur du contenu */
+    min-height: 2%; /* Couvre au moins la hauteur de la fenêtre */
+    background-image: url('images/nature.jpg');
+    background-size: cover; /* Couvre tout l'espace sans déformer l'image */
+    background-position: left bottom; /* Commence en bas à gauche */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    opacity: 0.5; /* Transparence */
+    z-index: -1; /* Place l'image en arrière-plan */
+}
+
+/* Image de fond à droite (nature) */
+
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+header .profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
+}
+
+header h1 {
+    margin: 10px 0 5px;
+    font-size: 1.8em;
+    color: var(--primary-color);
+}
+
+header p {
+    margin: 0;
+    font-size: 1em;
+    color: #bdc3c7;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+section img {
+    max-width: 100%;
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid var(--primary-color);
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-top: 4px solid var(--primary-color);
+}
+
+footer .social-links img {
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-links img:hover {
+    transform: scale(1.1);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    header p {
+        font-size: 0.9em;
+    }
+    section {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    section h2 {
+        font-size: 1.5em;
+    }
+    section p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header .profile img {
+        width: 80px;
+        height: 80px;
+    }
+    section img {
+        height: 150px;
+        width: 250px;
+    }
+}
